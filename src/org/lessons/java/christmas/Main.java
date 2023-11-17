@@ -1,6 +1,8 @@
 package org.lessons.java.christmas;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -34,8 +36,15 @@ public class Main {
 					+ "----------------------------------");
 		}
 
+		System.out.println("Come vuoi ordinare la lista per nome del regalo o per destinatario ?");
+		String sortBy = in.nextLine();
 		in.close();
-		System.out.println(regali);
+		if (sortBy.equals("nome")){
+			Collections.sort(regali, Comparator.comparing(Regalo::getNome));
+		} else Collections.sort(regali, Comparator.comparing(Regalo::getDestinatario));
+		
+		
+		 System.out.println(regali);
 
 	}
 }
