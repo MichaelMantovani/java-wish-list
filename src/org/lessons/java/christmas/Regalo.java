@@ -27,7 +27,7 @@ public class Regalo {
 
 	@Override
 	public String toString() {
-		return "Nome regalo: " + getNome() + "\n" + "Destinatario " + getDestinatario();
+		return "\n" + "Nome regalo: " + getNome() + " - " + "Destinatario " + getDestinatario() ;
 	}
 
 }
